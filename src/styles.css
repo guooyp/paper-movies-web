@@ -1,0 +1,67 @@
+/* Same palette as the Flutter app: warm neutrals and a single teal accent. */
+:root {
+  color-scheme: light dark;
+
+  --surface: #faf8f5;
+  --card: #ffffff;
+  --filled: #efebe3;
+  --on-surface: #1c1b1a;
+  --on-surface-muted: #6b675f;
+  --outline: #e3ded5;
+  --primary: #1f6f6b;
+  --on-primary: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #161614;
+    --card: #1e1d1a;
+    --filled: #2a2926;
+    --on-surface: #ede9e4;
+    --on-surface-muted: #a9a59d;
+    --outline: #3a3834;
+    --primary: #6fcbc3;
+    --on-primary: #00201e;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--on-surface);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

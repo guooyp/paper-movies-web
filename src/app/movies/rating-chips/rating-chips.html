@@ -1,0 +1,12 @@
+<div class="chips" role="group" aria-label="Filter by rating">
+  @for (category of categories; track category.name) {
+    <button
+      type="button"
+      class="chip"
+      [attr.aria-pressed]="category === selected()"
+      (click)="selectedChange.emit(category)"
+    >
+      {{ category.name }}
+    </button>
+  }
+</div>

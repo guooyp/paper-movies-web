@@ -1,0 +1,44 @@
+<article class="card">
+  @if (posterUrl(); as url) {
+    <img
+      class="poster"
+      [src]="url"
+      alt=""
+      width="62"
+      height="92"
+      loading="lazy"
+      (error)="onPosterError()"
+    />
+  } @else {
+    <div class="poster placeholder" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linejoin="round"
+      >
+        <rect x="3" y="4" width="18" height="16" rx="2" />
+        <path d="M3 9h18M8 4l-2 5M13 4l-2 5M18 4l-2 5" />
+      </svg>
+    </div>
+  }
+
+  <div class="info">
+    <h2 class="title">{{ movie().title }}</h2>
+    <p class="date">{{ date() }}</p>
+    <p class="badge">
+      @if (rated()) {
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+          <path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" />
+        </svg>
+        <span class="visually-hidden">Rating</span>
+        {{ rating() }}
+      } @else {
+        Not rated
+      }
+    </p>
+  </div>
+</article>
